@@ -1,0 +1,56 @@
+@use 'variaveis';
+
+.personagens {
+    margin-bottom: 36px;
+    
+    
+    &__content {
+        display: inline;
+        align-items: center;
+
+        h2 {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        &__list {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            max-width: 760px;
+            margin-left: 30%;
+
+            @media (max-width:768px) {
+                margin: 0;
+            }
+            
+            &__item {
+                padding: 16px;
+                list-style: none;
+
+                img {
+                    height: 267px;
+                    width: 180px;
+                }
+
+                &:hover {
+                    -webkit-transform: scale(1.25);
+                    transform: scale(1.25);
+
+                    @media (max-width:768px){
+                        margin-bottom: 24px;
+                    }
+
+                    h3 {
+                        margin-top: -40px;
+                        margin-left: 10px;
+                        color: variaveis.$corTextoPersonagens;
+                    }
+                }
+            }
+        }
+
+
+    }
+}

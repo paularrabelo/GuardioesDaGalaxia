@@ -1,0 +1,39 @@
+@use 'variaveis';
+
+.footer {
+    padding: 26px 8px;
+
+    &__container {
+        max-width: 1024px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    &__logo {
+        width: 80px;
+        margin: 0 auto 10px;
+    }
+
+    &__links { 
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        &__item {
+            padding: 12px;
+            list-style: none;
+            
+            img {
+                height: 36px;
+                width: 36px;
+                
+                &:hover {
+                    -webkit-transform: scale(1.5);
+                    transform: scale(1.5);
+                }
+            }
+        }
+    }
+}
