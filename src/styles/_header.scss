@@ -25,18 +25,31 @@
         padding: 8px 36px;
         display: flex;
         justify-content: space-between;
+        width: 80%;
+        margin: 0 auto;
 
-        @media (max-width: 768px) {
+        @media (max-width: variaveis.$mobile) {
             padding: 12px;
         }
+
+        .mobile-menu-icon {
+            display: none;
+
+            @media (max-width: 1024px) {
+                display: flex;
+                width: 50px;
+            }
+        }
+
     }
 
     &__logo {
         max-width: 180px;
         width: 100%;
         transition: opacity .5s ease;
+        padding: 8px;
 
-        @media (max-width: 768px){
+        @media (max-width: variaveis.$tablet){
             max-width: 64px;
         }
     }
@@ -44,21 +57,70 @@
     &__links {
         display: flex;
         align-items: center;
+        
         &__item {
             margin: 5px;
             list-style: none;
             transition: opacity .5s ease;
+
+            
+            @media (max-width: variaveis.$tablet) {
+                display: none;
+            }
         }
     }
 
     .button {
         height: 50px;
 
-        @media (max-width: 768px){
-            font-size: 12px;
+        @media (max-width: variaveis.$tablet){
             padding: 8px;
             height: 40px;
             letter-spacing: 0;
         }
+    }
+
+    .mobile__menu {
+        display: none;
+
+        @media (max-width: variaveis.$mobile){
+            &__links {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                padding-bottom: 1rem;
+                
+            }
+
+            &__item {
+                display: block;
+                padding-top: 1.2rem;
+                list-style: none;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: variaveis.$tablet){
+            &__links {
+                display: inline;
+                text-align: center;
+                padding-bottom: 1rem;
+                list-style: none;
+            }
+
+            .button {
+                max-width: 30%;
+                margin: 0 auto;
+                margin-bottom: 12px;
+                
+            }
+
+            .button--secondary {
+                margin-right: 36px;
+            }
+        }
+    }
+
+    .open {
+        display: block;
     }
 }

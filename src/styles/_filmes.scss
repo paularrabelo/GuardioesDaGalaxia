@@ -14,9 +14,17 @@
         &--is-active {
             display: grid;
             
-            @media (max-width: 768px) {
+            @media (max-width: variaveis.$mobile) {
                 display: block;
                 padding: 16px;
+            }
+
+            @media (max-width: variaveis.$tablet) {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                
             }
         }
 
@@ -30,9 +38,16 @@
             position: relative;
             transition: 0.5s;
             border-radius: 10px;
+            
 
-            @media (max-width: 768px) {
-                margin-bottom: 24px;
+            @media (max-width: variaveis.$tablet) {
+                height: 700px;
+                max-width: 90%;
+                margin: 12px auto;
+
+                &__item h2, p{
+                    padding: 8px 24px;
+                }
             }
 
             img {
@@ -42,6 +57,11 @@
                 border-radius: 4px;
                 transition: 0.5s;
                 position: absolute;
+
+                @media (max-width: variaveis.$tablet) {
+                    top: -90px;
+                    scale: 0.70;
+                }
             }
 
             &__content {
@@ -58,24 +78,21 @@
                 }
             }
         }
+        
+        @media (min-width: variaveis.$tablet){
+            &__item:hover {
+                height: 700px;
+                }
 
-        &__item:hover {
-            height: 700px;
+            &__item:hover img{
+                top: -90px;
+                scale: 0.70;
             }
-
-        &__item:hover img{
-        top: -90px;
-        scale: 0.70;
-
-            @media (max-width:768px) {
-                top: -80px;
+            
+            &__item:hover h2, p{
+                padding: 8px 24px;
             }
         }
-
-        &__item:hover h2, p{
-            padding: 8px 24px;
-        }
-
     }
 
     &__tabs {
@@ -93,7 +110,7 @@
             cursor: pointer;
             border-bottom: 5px solid transparent;
             
-            @media (max-width: 768px){
+            @media (max-width: variaveis.$mobile){
                 font-size: 16px;
             }
 
