@@ -5,8 +5,8 @@
     top: 0;
     left: 0;
     background-color: variaveis.$corDeFundo;
-    transition: background-color .5s ease;
     z-index: 1;
+    transition: variaveis.$corDeFundoBotaoDark 1s ease;
 
     &--is-hidden {
         background-color: transparent;
@@ -27,6 +27,7 @@
         justify-content: space-between;
         width: 80%;
         margin: 0 auto;
+        
 
         @media (max-width: variaveis.$mobile) {
             padding: 12px;
